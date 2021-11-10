@@ -17,7 +17,7 @@ class App extends Component {
           <NavBar />
           <RecipesContainer />
         <Switch>
-          <Route path="/second_home" render={() => <CreateRecipe />} />
+          <Route path="/create_recipe" render={() => <CreateRecipe />} />
           <Route path="/" render={() => <Home />} />
         </Switch>
       </div>
