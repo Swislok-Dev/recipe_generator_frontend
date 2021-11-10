@@ -27,7 +27,7 @@ const NavBar = (props) =>{
       >
         Home
       </NavLink>
-      <NavLink to='/second_home' exact style={link} activeStyle={activeLink}>Second Home</NavLink>
+      <NavLink to='/second_home' exact style={link} activeStyle={activeLink}>Create Recipe</NavLink>
     </div>
   )
 }
