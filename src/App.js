@@ -1,25 +1,28 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
+import React, { Component } from 'react'
+import NavBar from './components/NavBar'
+import Home from './components/Home'
+import SecondHome from './components/SecondHome'
+import { Route, Switch } from 'react-router-dom'
+import RecipesContainer from './containers/RecipesContainer'
+// import { connect } from 'react-redux'
+// 
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  render () {
+    return (
+      <div className="App">
+          <h1>Home page</h1>
+          <NavBar />
+          <RecipesContainer />
+        <Switch>
+          <Route path="/second_home" render={() => <SecondHome />} />
+          <Route path="/" render={() => <Home />} />
+        </Switch>
+      </div>
+    );
+  }
 }
 
-export default App;
+export default (App);
