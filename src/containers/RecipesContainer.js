@@ -19,4 +19,10 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps)(RecipesContainer)
+const mapDispatchToProps = dispatch => {
+  return {
+    addIngredient: formData => dispatch({ type: 'ADD_INGREDIENT', payload: formData})
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(RecipesContainer)
