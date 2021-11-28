@@ -6,6 +6,7 @@ import Home from './components/Home'
 import CreateRecipe from './components/CreateRecipe'
 import { Route, Switch } from 'react-router-dom'
 import RecipesContainer from './containers/RecipesContainer'
+import UserForms from './components/Users/UserForms'
 // import { connect } from 'react-redux'
 // 
 
@@ -15,8 +16,9 @@ class App extends Component {
       <div className="App">
           <h1>Home page</h1>
           <NavBar />
-          <RecipesContainer />
         <Switch>
+          <Route path="/login" render={() => <UserForms /> } />
+          <Route path="/recipes" render={() => <RecipesContainer />} />
           <Route path="/create_recipe" render={() => <CreateRecipe />} />
           <Route path="/" render={() => <Home />} />
         </Switch>

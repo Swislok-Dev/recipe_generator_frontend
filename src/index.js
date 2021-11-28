@@ -3,19 +3,12 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
-import thunk from 'redux-thunk';
 import { BrowserRouter as Router } from 'react-router-dom';
-import manageIngredients from './reducers/manageIngredients';
 
-const store = createStore(
-  // place reducers here
-  manageIngredients,
-  applyMiddleware(thunk),
-  
-  // window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-);
+import store from 'store'
+
+
 
 ReactDOM.render(
   <React.StrictMode>

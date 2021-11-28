@@ -18,6 +18,13 @@ const NavBar = (props) =>{
   return (
     <div>
       <NavLink
+      to="/login"
+      exact
+      style={link}
+      activeStyle={activeLink}
+      >
+        Login</NavLink>
+      <NavLink
       to='/'
       exact
       style={link}
@@ -27,6 +34,7 @@ const NavBar = (props) =>{
       >
         Home
       </NavLink>
+      <NavLink to="/recipes" exact style={link} activeStyle={activeLink}>Recipes</NavLink>
       <NavLink to='/create_recipe' exact style={link} activeStyle={activeLink}>Create Recipe</NavLink>
     </div>
   )
