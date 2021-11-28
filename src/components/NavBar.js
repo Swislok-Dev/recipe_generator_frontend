@@ -8,7 +8,13 @@ const link = {
   textDecoration: "none",
   color: "white",
   borderRadius: 50,
+  // position: "relative",
+  // right: "5%"
 };
+
+// const floatRight = {
+//   ...link, position: "relative", left: "50%"
+// }
 
 const activeLink = {
   background: "green", borderWidth: "1px", borderStyle: "solid"
@@ -17,6 +23,13 @@ const activeLink = {
 const NavBar = (props) =>{
   return (
     <div>
+      <NavLink
+      to="/login"
+      exact
+      style={link}
+      activeStyle={activeLink}
+      >
+        Login</NavLink>
       <NavLink
       to='/'
       exact
@@ -27,6 +40,7 @@ const NavBar = (props) =>{
       >
         Home
       </NavLink>
+      <NavLink to="/recipes" exact style={link} activeStyle={activeLink}>Recipes</NavLink>
       <NavLink to='/create_recipe' exact style={link} activeStyle={activeLink}>Create Recipe</NavLink>
     </div>
   )

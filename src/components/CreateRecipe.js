@@ -4,7 +4,8 @@ import { connect } from 'react-redux'
 class CreateRecipe extends React.Component {
 
   state = {
-    ingredients: [],
+    title: "",
+    ingredients: "",
     instructions: "",
   }
 
@@ -14,8 +15,8 @@ class CreateRecipe extends React.Component {
   // }
 
   // saveIngredient = (e) => {
-  //   let input = e.target.name
-  //   this.setState({ input: e.target.value })
+
+  //   this.setState({ [e.target.name]: e.target.value })
   // }
 
   showProps = () => {
@@ -30,10 +31,12 @@ class CreateRecipe extends React.Component {
 
   onHandleSubmit = (e) => {
     e.preventDefault();
+    // const { title, ingredients, instructions } = this.props
     console.log("Submitted state", this.state)
-    this.props.addIngredient(this.state.ingredients)
+    console.log("this.props.state:", this.props.state)
     this.setState({
-      ingredients: [],
+      title: "",
+      ingredients: "",
       instructions: "",
     })
   }
@@ -42,30 +45,36 @@ class CreateRecipe extends React.Component {
     console.log("Button clicked to show state:", this.state)
   }
 
-  ingredientsList = () => {
-    this.state.ingredients.map((items, idx) => {
-      return <li key={idx}>{items}</li>
-    })
-  }
+  addIngredientButton = document.getElementById("addIngredientBtn")
+
+  // ingredientsList = () => {
+  //   this.props.ingredients.map((items, idx) => {
+  //     return <li key={idx}>{items}</li>
+  //   })
+  // }
+
   render() {
     return (
-      <div>
+      <div >
         <h1>Create Recipe Page</h1>
-        <form onSubmit={this.onHandleSubmit}>
+        <form className="recipe-form" onSubmit={this.onHandleSubmit}>
+          <label htmlFor="title">Recipe Name</label>
+          <input type="text" name="title" placeholder="Name your recipe" value={this.state.title} onChange={this.onHandleChange} />
+
+          <label htmlFor="ingredients">Ingredients</label>
           <input
           type="text"
           name="ingredients"
           placeholder="ingredients"
           value={this.state.ingredients}
           onChange={this.onHandleChange}
-          onKeyPress={(e) => { e.key === 'Enter' && e.preventDefault(); }}
+          // onKeyPress={(e) => { e.key === 'Enter' && e.preventDefault(); }}
           />
-          <button onClick={this.addIngredient}>Add Ingredient</button>
-          {/* <ol>
-            {this.ingredientsList}
-          </ol> */}
-          <input
-          type="textArea"
+          {/* <button id="addIngredientBtn" onClick={this.addIngredient}>Add Ingredient</button> */}
+          
+          <label htmlFor="instructions">Instructions</label>
+          <textarea
+          type="text"
           name="instructions"
           placeholder="instructions"
           value={this.state.instructions}
@@ -82,14 +91,10 @@ class CreateRecipe extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    ingredients: state.ingredients
+    recipes: state.recipes
   }
 }
 
-const mapDispatchToProps = dispatch => {
-  return {
-    addIngredient: formData => dispatch({ type: 'ADD_INGREDIENT', payload: formData})
-  }
-}
 
-export default connect(mapStateToProps, mapDispatchToProps)(CreateRecipe)
+
+export default connect(mapStateToProps)(CreateRecipe)
