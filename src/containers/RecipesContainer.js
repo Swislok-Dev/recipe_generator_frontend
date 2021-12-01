@@ -1,34 +1,43 @@
 import React from 'react'
 import { connect } from 'react-redux';
-import RecipeSearch from '../components/RecipeSearch'
-import { fetchRecipes  } from '../actions/recipesActions'
+import { fetchRecipes  } from '../redux/recipesActions'
+import Recipe from '../components/Recipes/Recipe'
+import CreateRecipe from '../components/Recipes/CreateRecipe'
+import { Switch, Route } from 'react-router-dom'
 
 
-class RecipesContainer extends  React.Component {
-  state = {
-    loading: false,
-    recipes: [],
-  }
+class RecipesContainer extends React.Component {
 
   componentDidMount() {
-    // this.fetchRecipes()
     this.props.fetchRecipes()
-
   }
-  render() {
-    console.log(this.props.state)
+
+  handleClick = () => {
+    console.log(this.props)
+  }
+  
+    // console.log("RecipesContainer props:", this.props)
+  render(){
     return (
       <div>
-        <h2>Recipes Container</h2>
-        <RecipeSearch />
+        {/* <h2>Recipes Container</h2> */}
+        <Switch>
+          <Route path="/recipes/new" component={ CreateRecipe } />
+          <Route path="/recipes/:id" />
+          <Route path="/recipes" render={(routerProps) => <Recipe {...routerProps} recipes={this.props.recipes} />} />
+        </Switch>
+        {/* <RecipeSearch /> */}
 
-
+        {/* <Recipe recipes={this.props.recipes} /> */}
+        {/* {this.recipes.map((recipe) => <Recipe key={recipe.id} {...recipe} />)} */}
       </div>
     )
   }
 }
 
-const mapStateToProps = ({ recipes }) => ({ recipes })
+const mapStateToProps = (state) => {
+  return ({ recipes: state.recipes })
+}
 
 // const mapDispatchToProps = dispatch => {
 //   return {
