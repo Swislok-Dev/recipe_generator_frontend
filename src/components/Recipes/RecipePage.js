@@ -1,8 +1,9 @@
 import React from 'react'
 import RecipeSearch from './RecipeSearch'
+import RecipeList from './RecipeList'
+import { Switch, Route } from 'react-router-dom'
 // import { connect } from 'react-redux'
 
-// const recipesList = this.props.recipes
 
 // class Recipe extends React.Component {
   const RecipePage = (props) => {
@@ -12,20 +13,25 @@ import RecipeSearch from './RecipeSearch'
     console.log("Recipes from Recipe.props:", (props))
   }
 
-  const recipeList = (
-    recipes.map(recipe => 
-      <li key={recipe.id}>{recipe.title}</li>)
-  )
+  // const recipeList = (
+  //   recipes.map(recipe => 
+  //     <li key={recipe.id}>{recipe.title}</li>)
+  // )
 
 
   return (
     <div>
       <RecipeSearch />
       <h1>Recipes should all be here</h1>
+      <RecipeList recipes={recipes} />
+      <Switch>
+      <Route exact path={match.url} render={() => <h3>Choose a recipe to view more</h3>} />
+      <Route path={`${match.url}/:recipeID`} render={(routerProps) => <RecipeList { ...routerProps } recipes={recipes} /> } />
+      </Switch>
       <button onClick={showProps}>Show PropS</button>
       <ul>
         
-        {recipeList}
+        {/* {recipeList} */}
         
 
       </ul>
