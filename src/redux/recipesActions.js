@@ -25,7 +25,7 @@ export const fetchRecipes = () => {
   return dispatch => {
     fetch(`${API}/recipes`)
     .then(resp => resp.json())
-    .then(recipes => dispatch({ type: 'GET_RECIPES', recipes: recipes}))
+    .then(recipes => dispatch({ type: 'GET_RECIPES', payload: recipes}))
     // .then(recipes => dispatch({ type: 'GET_RECIPES', payload: recipes.map(recipe => ({...recipe}))}))
   }
 }
