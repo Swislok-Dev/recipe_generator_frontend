@@ -1,4 +1,5 @@
 import React from 'react'
+import RecipeSearch from './RecipeSearch'
 // import { connect } from 'react-redux'
 
 // const recipesList = this.props.recipes
@@ -19,6 +20,7 @@ import React from 'react'
 
   return (
     <div>
+      <RecipeSearch />
       <h1>Recipes should all be here</h1>
       <button onClick={showProps}>Show PropS</button>
       <ul>
