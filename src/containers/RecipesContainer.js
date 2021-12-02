@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux';
 import { fetchRecipes  } from '../redux/recipesActions'
-import Recipe from '../components/Recipes/Recipe'
+import Recipe from '../components/Recipes/RecipePage'
 import CreateRecipe from '../components/Recipes/CreateRecipe'
 import { Switch, Route } from 'react-router-dom'
 
@@ -24,7 +24,7 @@ class RecipesContainer extends React.Component {
         <Switch>
           <Route path="/recipes/new" component={ CreateRecipe } />
           <Route path="/recipes/:id" />
-          <Route path="/recipes" render={(routerProps) => <Recipe {...routerProps} recipes={this.props.recipes} />} />
+          <Route path="/recipes" render={(routerProps) => <Recipe { ...routerProps } recipes={this.props.recipes} />} />
         </Switch>
         {/* <RecipeSearch /> */}
 
