@@ -9,10 +9,24 @@ const RecipeShow = ( props ) => {
   const handleClick = () => {
     history.push("/recipes")
   }
-  
+  const recipe = recipes.filter(recipe => recipe.id === Number(match.params.id))[0]
+  console.log(recipe)
   return (
+    
+
     <div className="recipe">
-      <h3>{recipes[match.params.id].title}</h3><br />
+      <h2>
+        {`${recipe.title}`}<br />
+      </h2>
+
+      <h3>
+        {`${recipe.ingredients}`}<br />
+      </h3>
+
+      <h4>
+        {`${recipe.instructions}`}<br />
+      </h4>
+      
       <button onClick={handleClick}>Go Back</button>
 
     </div>
