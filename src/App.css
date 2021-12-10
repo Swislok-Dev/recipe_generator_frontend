@@ -1,29 +1,39 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap');
 
 @font-face {
-  font-family: Poppins-Regular;
+  font-family: Poppins;
   src: url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap');
 }
 .App {
-  text-align: center;
+  text-align: -webkit-center;
   padding: 10px;
   font-family: Poppins-Regular, sans-serif;
+}
+
+.centered {
+  max-width: 80%;
+  /* min-width: 30%; */
+  /* text-align: -webkit-center; */
+  
 }
 
 .cards {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
+  
 }
 
 .card {
-  flex: 0 1 24%;
+  flex: 0 1 20%;
   box-sizing: border-box;
-  margin: 1rem .25em;
+  margin: 1rem 1.25em;
   border: 2px solid #fff;
   box-shadow: 0 4px 8px 0 #fff;
   background-color: #db8d8d;
   border-radius: 25%;
+  max-width: 500px;
+  min-width: 300px;
 }
 
 
@@ -39,7 +49,7 @@
 
 
 body {
-  font-family: Poppins-Regular, sans-serif;
+  font-family: Poppins, sans-serif;
   height: 100%;
   background-color: rgb(182, 55, 55);
 }
@@ -56,6 +66,10 @@ input {
 textarea {
   outline: none;
   border: none;
+}
+
+Link {
+  text-decoration: none;
 }
 
 input:focus, textarea:focus {

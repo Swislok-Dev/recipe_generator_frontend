@@ -7,17 +7,20 @@ const RecipeList = props => {
 
   const renderRecipes = (
     recipes.map(recipe =>
-      <div className="cards">
+      
         <Link key={recipe.id} className="card" to={`/recipes/${recipe.id}`} >
-          <p className="card-item">{recipe.title}</p><br/>
+          <p>{recipe.title}</p>
         </Link>
-      </div>)
+      
+      )
   )
 
   return (
-    <div className="centered">
+    <div className="display-recipes">
       <h2>Choose a recipe below</h2>
-      {renderRecipes}
+      <div className="cards">
+        {renderRecipes}
+        </div>
     </div>
   )
 }

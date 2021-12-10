@@ -15,7 +15,7 @@ class RecipesContainer extends React.Component {
   
   render(){
     return (
-      <div>
+      <div className="centered">
         <Switch>
           <Route path="/recipes/new" component={ CreateRecipe } />
           <Route path="/recipes/:id" render={(routerProps) => <RecipeShow {...routerProps} recipes={this.props.recipes} /> }/>
