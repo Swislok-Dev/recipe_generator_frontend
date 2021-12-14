@@ -1,5 +1,5 @@
 
-export function manageRecipes(state = {recipes: []}, action) {
+export function recipesReducer(state = {recipes: []}, action) {
   switch (action.type) {
     
     case 'GET_RECIPES':
