@@ -4,7 +4,7 @@ import React, { Component } from 'react'
 import NavBar from './components/NavBar'
 import Home from './components/Home'
 import { Route, Switch } from 'react-router-dom'
-import UserForms from './components/Users/UserForms'
+import UsersContainer from './containers/UsersContainer'
 import RecipesContainer from './containers/RecipesContainer'
 
 
@@ -15,8 +15,9 @@ class App extends Component {
           <h1>Recipe Generator</h1>
           <NavBar />
           <RecipesContainer />
+          <UsersContainer />
         <Switch>
-          <Route path="/login" component={ UserForms } />
+          <Route path="/login" />
           <Route path="/recipes/new" />
           <Route path="/recipes" />
           <Route path="/" component={ Home } />
