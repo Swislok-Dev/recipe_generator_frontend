@@ -53,10 +53,12 @@ body {
   height: 100%;
   background-color: rgb(182, 55, 55);
 }
-
+/* 
 form {
   display: inline-grid;
-}
+  width: 100%;
+} */
+
 
 input {
   outline: none;
@@ -97,13 +99,13 @@ textarea::-moz-placeholder { color: #999999; }
 textarea:-ms-input-placeholder { color: #999999; } */
 
 button {
-	outline: none !important;
+  outline: none !important;
 	border: none;
 	background: transparent;
 }
 
 button:hover {
-	cursor: pointer; 
+  cursor: pointer; 
 } 
 
 iframe {
@@ -118,8 +120,8 @@ iframe {
 }
 
 .container {
-  width: 100%;
-  min-height: 100vh;
+  width: 80%;
+  min-height: 50vh;
   display: -webkit-box;
   display: -webkit-flex;
   display: -webkit-moz-box;
@@ -129,12 +131,12 @@ iframe {
   justify-content: center;
   align-items: center;
   padding: 15px;
-  background: rgba(219,21,99,0.8);
+  /* background: rgba(219,21,99,0.8);
   background: -webkit-linear-gradient(45deg, rgba(213,0,125,0.8), rgba(229,57,53,0.8));
   background: -o-linear-gradient(45deg, rgba(213,0,125,0.8), rgba(229,57,53,0.8));
   background: -moz-linear-gradient(45deg, rgba(213,0,125,0.8), rgba(229,57,53,0.8));
-  background: linear-gradient(45deg, rgba(213,0,125,0.8), rgba(229,57,53,0.8));
-
+  background: linear-gradient(45deg, rgba(213,0,125,0.8), rgba(229,57,53,0.8)); */
+  
 }
 
 .wrap-container {
@@ -142,7 +144,21 @@ iframe {
   background: #fff;
   border-radius: 10px;
   overflow: hidden;
-  padding: 72 px 55px 90px 55px;
+  padding: 72px 55px 90px 55px;
+}
+
+.form {
+  width: 100%;
+}
+
+.form-title {
+  display: block;
+  font-family: Poppins-Bold;
+  font-size: 39px;
+  color: #333;
+  line-height: 1.2;
+  text-align: center;
+  padding-bottom: 90px;
 }
 
 .wrap-input {
@@ -155,6 +171,10 @@ iframe {
 .input {
   display: block;
   width: 100%;
+  font-family: Poppins-Regular;
+  font-size: 15px;
+  color: #555;
+  line-height: 1.2;
 }
 
 .focus-input {
@@ -189,7 +209,7 @@ iframe {
 
 }
 
-.focus-input::after {
+.focus-input:after {
   content: attr(data-placeholder);
   display: block;
   width: 100%;
@@ -258,7 +278,7 @@ textarea.input + .focus-input::after {
   border-radius: 2px;
   width: auto;
   overflow: hidden;
-  margin: 0 auto;
+  margin: 10px;
 }
 
 .form-bgbtn {
@@ -291,6 +311,7 @@ textarea.input + .focus-input::after {
   padding: 0 20px;
   min-width: 244px;
   height: 50px;
+  background-color: red;
 
   font-family: Poppins-Medium;
   font-size: 16px;
@@ -298,15 +319,20 @@ textarea.input + .focus-input::after {
   line-height: 1.2;
 }
 
+.form-btn:hover {
+  cursor: pointer;
+}
+
 .wrap-form-btn:hover .form-bgbtn {
   left: 0;
+  cursor: pointer;
 }
 
 @media (max-width: 576px) {
   .wrap-container {
     padding: 72px 15px 90px 15px;
   }
-} */
+} 
 
 /* Validation */
 
