@@ -14,13 +14,10 @@ class App extends Component {
       <div className="App">
           <h1>Recipe Generator</h1>
           <NavBar />
-          <RecipesContainer />
-          <UsersContainer />
         <Switch>
-          <Route path="/login" />
-          <Route path="/recipes/new" />
-          <Route path="/recipes" />
-          <Route path="/" component={ Home } />
+          <Route path="/recipes" render={() => <RecipesContainer /> } />
+          <Route path="/login" render={() =><UsersContainer /> } />
+          <Route exact path="/" component={ Home } />
         </Switch>
       </div>
     );
