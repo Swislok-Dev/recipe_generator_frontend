@@ -22,7 +22,7 @@ class UsersContainer extends React.Component {
   handleLogin = (data) => {
     this.setState({
       isLoggedIn: true,
-      user: data.user``
+      user: data.user
     })
   }
 
@@ -40,7 +40,7 @@ class UsersContainer extends React.Component {
       <div>
         <BrowserRouter>
           <Switch>
-            <Route exact path="/login" component={ UserForm } />
+            <Route exact path="/login" render={() => <UserForm />} />
             {/* <Route path='/signup' component={SignupForm} /> */}
           </Switch>
         </BrowserRouter>
