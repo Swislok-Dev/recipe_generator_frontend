@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 // import SignupForm from '../components/Users/signupForm'
 import UserForm from '../components/Users/UserForm'
-import { loginStatus } from '../redux/usersActions'
+import { loginStatus, fetchUsers } from '../redux/usersActions'
 
 class UsersContainer extends React.Component {
   constructor(props) {
@@ -15,6 +15,7 @@ class UsersContainer extends React.Component {
   
   componentDidMount() {
     // loginStatus() 
+    fetchUsers()
     console.log("Users Container tried to mount the loginStatus()", )
   }
   

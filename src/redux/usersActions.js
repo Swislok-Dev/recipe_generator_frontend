@@ -15,6 +15,7 @@ export const loginStatus = () => {
 }
 
 export const fetchUsers = () => {
+  console.log("fetchUsers() called")
   return dispatch => {
     fetch(`${API}/users`)
     .then(resp => resp.json())
