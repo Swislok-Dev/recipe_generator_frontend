@@ -27,7 +27,7 @@ class UserForm extends React.Component {
     return (
       <div className="container">
       <div className="wrap-container">
-        <h3>Please Login</h3>
+        {/* <h3>Please Login</h3> */}
         <form className="form validate-form" onSubmit={(event) =>this.handleOnSubmit(event)}>
           <span className="form-title" value="Please log in">Please login</span>
           <div className="wrap-input">
