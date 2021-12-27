@@ -11,7 +11,8 @@ const link = {
 };
 
 const activeLink = {
-  background: "darkred", 
+  background: "darkred",
+  border: "2px solid white",
 }
 
 const NavBar = (props) =>{
