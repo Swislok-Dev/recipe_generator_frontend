@@ -68,9 +68,9 @@ class CreateRecipe extends React.Component {
               </div>
               <div className="container-form-btn">
                 <div className="wrap-form-btn" type="submit">
-                  <div className="form-bgbtn">
+                  {/* <div className="form-bgbtn"> */}
                     <input className="form-btn" type="submit" value="Submit your recipe" />
-                  </div>
+                  {/* </div> */}
                 </div>
               </div>
             </form>

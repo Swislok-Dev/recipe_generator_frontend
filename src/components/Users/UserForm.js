@@ -25,32 +25,34 @@ class UserForm extends React.Component {
 
   render() {
     return (
-      <div className="container">
-      <div className="wrap-container">
-        {/* <h3>Please Login</h3> */}
-        <form className="form validate-form" onSubmit={(event) =>this.handleOnSubmit(event)}>
-          <span className="form-title" value="Please log in">Please login</span>
-          <div className="wrap-input">
-            {/* <label htmlFor="username" value="username">Username: </label> */}
-            <input className="input" type="text" name="username" onChange={(event) => this.handleOnChange(event)} />
-            <span className="focus-input " data-placeholder="USERNAME"></span>
-          </div>
-
-          <div className="wrap-input">
-            {/* <label htmlFor="password" value="password">Password: </label> */}
-            <input className="input" type="password" name="password" onChange={(event) => this.handleOnChange(event)} />
-            <span className="focus-input " data-placeholder="PASSWORD"></span>
-          </div>
-
-          <div className="container-form-btn">
-            <div className="wrap-form-btn">
-              <div >
-                <input className="form-btn" type="submit" value="Login"/>
+      <div className="background">
+        <div className="container">
+          <div className="wrap-container">
+            {/* <h3>Please Login</h3> */}
+            <form className="form validate-form" onSubmit={(event) =>this.handleOnSubmit(event)}>
+              <span className="form-title" value="Please log in">Please login</span>
+              <div className="wrap-input">
+                {/* <label htmlFor="username" value="username">Username: </label> */}
+                <input className="input" type="text" name="username" onChange={(event) => this.handleOnChange(event)} />
+                <span className="focus-input " data-placeholder="USERNAME"></span>
               </div>
-            </div>
+
+              <div className="wrap-input">
+                {/* <label htmlFor="password" value="password">Password: </label> */}
+                <input className="input" type="password" name="password" onChange={(event) => this.handleOnChange(event)} />
+                <span className="focus-input " data-placeholder="PASSWORD"></span>
+              </div>
+
+              <div className="container-form-btn">
+                <div className="wrap-form-btn">
+                  <div >
+                    <input className="form-btn" type="submit" value="Login"/>
+                  </div>
+                </div>
+              </div>
+            </form>
           </div>
-        </form>
-      </div>
+        </div>
       </div>
     )
   }
