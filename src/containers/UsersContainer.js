@@ -1,38 +1,17 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
-// import SignupForm from '../components/Users/signupForm'
 import UserForm from '../components/Users/UserForm'
-import { loginStatus, fetchUsers } from '../redux/usersActions'
+import { connect } from 'react-redux'
 
 class UsersContainer extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      isLoggedIn: false,
-      user: {}
-    }
-  }
+  
   
   componentDidMount() {
-    // loginStatus() 
-    fetchUsers()
-    console.log("Users Container tried to mount the loginStatus()", )
+    console.log("Users Container tried to mount the loginStatus()", this.props)
   }
   
 
-  handleLogin = (data) => {
-    this.setState({
-      isLoggedIn: true,
-      user: data.user
-    })
-  }
-
-  handleLogout = () => {
-    this.setState({
-      isLoggedIn: false,
-      user: {}
-    })
-  }
+  
 
 
 
@@ -50,5 +29,6 @@ class UsersContainer extends React.Component {
   }
 }
 
-export default UsersContainer
+
+export default connect()(UsersContainer)
 
