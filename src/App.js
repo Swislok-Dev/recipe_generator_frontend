@@ -14,6 +14,7 @@ class App extends Component {
   render () {
     fetchRecipes()
     return (
+      fetchRecipes(),
       <div className="App">
           <h1>Recipe Generator</h1>
           <NavBar />
