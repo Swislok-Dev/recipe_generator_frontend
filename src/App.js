@@ -3,6 +3,8 @@ import './App.css';
 import React, { Component } from 'react'
 import NavBar from './components/NavBar'
 import Home from './components/Home'
+import { connect } from 'react-redux'
+import { fetchRecipes } from './redux/recipesActions'
 import { Route, Switch } from 'react-router-dom'
 import UsersContainer from './containers/UsersContainer'
 import RecipesContainer from './containers/RecipesContainer'
@@ -10,6 +12,7 @@ import RecipesContainer from './containers/RecipesContainer'
 
 class App extends Component {
   render () {
+    fetchRecipes()
     return (
       <div className="App">
           <h1>Recipe Generator</h1>
@@ -24,4 +27,4 @@ class App extends Component {
   }
 }
 
-export default (App);
+export default connect(null, { fetchRecipes })(App)
