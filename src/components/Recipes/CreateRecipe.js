@@ -10,11 +10,20 @@ class CreateRecipe extends React.Component {
     instructions: "",
   }
 
+  
+  
   onHandleChange = e => {
+    console.log(e.target.classList)
     
     this.setState({
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     })
+
+    if (e.target.value !== '') {
+      e.target.classList.add('has-val')
+    } else {
+      e.target.classList.remove('has-val')
+    }
   }
   
   onHandleSubmit = (e) => {
@@ -26,7 +35,7 @@ class CreateRecipe extends React.Component {
       instructions: "",
     })
   }
-
+  
   showProps = () => {
     console.log("Current allowed props", this.props)
   }
@@ -51,7 +60,7 @@ class CreateRecipe extends React.Component {
 
               <div className="wrap-input validate-input " data-validate="Title is required">
                 {/* <label htmlFor="title">Recipe Name</label> */}
-                <input className="input " type="text" required name="title"  value={this.state.title} onChange={this.onHandleChange} />
+                <input className="input"  type="text" required name="title"  value={this.state.title} onChange={this.onHandleChange} />
                 <span className="focus-input" data-placeholder="RECIPE TITLE"></span>
               </div>
 

@@ -259,6 +259,10 @@ textarea.input + .focus-input::after {
   width: 100%;
 }
 
+.has-val.input + .focus-input::after {
+  top: -13px;
+}
+
 .has-val.input + .focus-input::before {
   width: 100%;
 }
