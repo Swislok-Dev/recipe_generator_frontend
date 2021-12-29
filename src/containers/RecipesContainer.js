@@ -11,7 +11,7 @@ class RecipesContainer extends React.Component {
 
   componentDidMount() {
     this.props.fetchRecipes()
-    console.log("fetchRecipes() called")
+    console.log("fetchRecipes() called", fetchRecipes())
   }
   
   render(){
@@ -19,8 +19,8 @@ class RecipesContainer extends React.Component {
       <div className="centered">
         <Switch>
           <Route path="/recipes/new" component={ CreateRecipe } />
-          <Route path="/recipes/:id" render={(routerProps) => <RecipeShow {...routerProps} recipes={this.props.recipes} /> }/>
-          <Route path="/recipes" render={(routerProps) => <RecipeList { ...routerProps } recipes={this.props.recipes} />} />
+          <Route path="/recipes/:id" render={(routerProps) => <RecipeShow {...routerProps} recipes={this.props.recipes}  /> }/>
+          <Route path="/recipes" render={(routerProps) => <RecipeList { ...routerProps } recipes={this.props.recipes} /> }/>
         </Switch>
       </div>
     )
@@ -28,7 +28,9 @@ class RecipesContainer extends React.Component {
 }
 
 const mapStateToProps = (state) => {
-  return ({ recipes: state.recipes })
+  return ({ 
+    recipes: state.recipes,
+  })
 }
 
 export default connect(mapStateToProps, { fetchRecipes })(RecipesContainer)

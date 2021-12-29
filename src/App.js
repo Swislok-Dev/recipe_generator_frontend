@@ -11,10 +11,12 @@ import RecipesContainer from './containers/RecipesContainer'
 
 
 class App extends Component {
+  componentDidMount() {
+    this.props.fetchRecipes()
+  }
+  
   render () {
-    fetchRecipes()
     return (
-      fetchRecipes(),
       <div className="App">
           <h1>Recipe Generator</h1>
           <NavBar />
