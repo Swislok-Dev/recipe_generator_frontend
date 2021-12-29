@@ -2,18 +2,17 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 const RecipeList = props => {
-  console.log("RecipeList() rendered", props)
+
   const { recipes } = props
 
   const renderRecipes = (
-    recipes.map(recipe =>
-      
-        <Link key={recipe.id} className="card" to={`/recipes/${recipe.id}`} >
-          <p>{recipe.title}</p>
-        </Link>
-      
-      )
+    recipes.map(recipeID =>
+      <Link key={recipeID.id} className="card" recipe={recipeID} to={`/recipes/${recipeID.id}`}>
+        <p>{recipeID.title}</p>
+      </Link> 
+    )
   )
+  console.log(props.recipe)
 
   return (
     <div className="display-recipes">
