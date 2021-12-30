@@ -55,12 +55,20 @@ body {
   height: 100%;
   background-color: rgb(182, 55, 55);
 }
-/* 
-form {
-  display: inline-grid;
-  width: 100%;
-} */
 
+
+a.card {
+  text-decoration: none;
+}
+
+nav.navbar a {
+  font-size: 18px;
+}
+
+a.card p {
+  font-variant: all-small-caps;
+  font-size: 28px;
+}
 
 input {
   outline: none;
