@@ -1,17 +1,17 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { addRecipe } from '../../redux/recipesActions'
+import { addRecipe } from '../../redux/actions'
 
 class CreateRecipe extends React.Component {
-
-  state = {
-    title: "",
-    ingredients: "",
-    instructions: "",
+  constructor(props) {
+    super(props)
+    this.state = {
+      title: "",
+      ingredients: "",
+      instructions: "",
+    }
   }
 
-  
-  
   onHandleChange = e => {    
     this.setState({
       [e.target.name]: e.target.value,
@@ -28,25 +28,11 @@ class CreateRecipe extends React.Component {
       ingredients: "",
       instructions: "",
     })
-  }
-  
-  showProps = () => {
-    console.log("Current allowed props", this.props)
-  }
-
-  showState = () => {
-    console.log("Button clicked to show state:", this.state)
-  }
-  
+  }  
   
   render() {
     return (
       <div className="background">
-        <div>
-          {/* <button onClick={this.showState}>Show State</button>
-          <button onClick={this.showProps}>Show Props</button><br /> */}
-        </div><br />
-
         <div className="container">
           <div className="wrap-container">
             <form className="form-title validate-form" onSubmit={this.onHandleSubmit}>
@@ -78,9 +64,7 @@ class CreateRecipe extends React.Component {
               </div>
             </form>
           </div>
-
         </div>
-
       </div>
     )
   }
@@ -91,7 +75,6 @@ const mapStateToProps = state => {
     recipes: state.recipes
   }
 }
-
 
 
 export default connect(mapStateToProps, { addRecipe })(CreateRecipe)

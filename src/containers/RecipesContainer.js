@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux';
-import { fetchRecipes  } from '../redux/recipesActions'
+import { fetchRecipes  } from '../redux/actions'
 import CreateRecipe from '../components/Recipes/CreateRecipe'
 import { Switch, Route } from 'react-router-dom'
 import RecipeShow from '../components/Recipes/RecipeShow'
