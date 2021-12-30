@@ -12,7 +12,7 @@ import RecipesContainer from './containers/RecipesContainer'
 
 class App extends Component {
   componentDidMount() {
-    this.props.fetchRecipes()
+    fetchRecipes()
   }
   
   render () {
