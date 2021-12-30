@@ -12,18 +12,12 @@ class CreateRecipe extends React.Component {
 
   
   
-  onHandleChange = e => {
-    console.log(e.target.classList)
-    
+  onHandleChange = e => {    
     this.setState({
       [e.target.name]: e.target.value,
     })
 
-    if (e.target.value !== '') {
-      e.target.classList.add('has-val')
-    } else {
-      e.target.classList.remove('has-val')
-    }
+    e.target.value !== "" ? e.target.classList.add("has-val") : e.target.classList.remove("has-val")
   }
   
   onHandleSubmit = (e) => {
