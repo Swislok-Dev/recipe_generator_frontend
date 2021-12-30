@@ -11,6 +11,7 @@ class UserForm extends React.Component {
     this.setState({
       [e.target.name]: e.target.value
     })
+    e.target.value !== "" ? e.target.classList.add("has-val") : e.target.classList.remove("has-val")
   }
 
   handleOnSubmit = (e) => {
