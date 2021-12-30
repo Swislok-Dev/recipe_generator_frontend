@@ -11,7 +11,6 @@ class RecipesContainer extends React.Component {
 
   componentDidMount() {
     this.props.fetchRecipes()
-    console.log("fetchRecipes() called", fetchRecipes())
   }
   
   render(){

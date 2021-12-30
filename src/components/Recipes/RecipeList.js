@@ -12,7 +12,6 @@ const RecipeList = props => {
       </Link> 
     )
   )
-  console.log(props.recipe)
 
   return (
     <div className="display-recipes">
