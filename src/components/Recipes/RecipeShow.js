@@ -3,7 +3,6 @@ import { useHistory } from 'react-router-dom'
 
 const RecipeShow = ( props ) => {
   const {match, recipes } = props
-  console.log("RecipeShow props:", props)
 
 
   const history = useHistory();
@@ -13,31 +12,40 @@ const RecipeShow = ( props ) => {
   }
   const recipe = recipes.filter(recipe => recipe.id === Number(match.params.id))[0]
 
-  console.log("RecipeShow >> const recipe", recipe ? recipe : undefined)
+  const ingredientList = () => {
+    return (recipe["ingredients"].split(", ").map(item =>
+      <li>{item}</li>))
+  }
+
+  const instructionList = () => {
+    return (recipe['instructions'].split('.').map(item =>
+      <li>{item}</li>)
+    )
+  }
   
-  return recipe ? (
-    
-    <div className="recipe">
-      <h2>
-        {`${recipe.title}`}<br />
-      </h2>
+  return (
+    <div className='container'>
+      <div className='wrap-container'>
+        <div className='recipe'>
+          { recipe ? (
+            <>
+              <h2>Recipe Name</h2>
+              <p>{`${recipe.title}`}</p>
+              
+              <h3>Ingredients</h3>
+              {ingredientList()}
 
-      <h3>
-        {`${recipe.ingredients}`}<br />
-      </h3>
+              <h3>Instructions</h3>
+              {instructionList()}
+            </>
 
-      <h4>
-        {`${recipe.instructions}`}<br />
-      </h4>
-      
-      <button onClick={handleClick}>Go Back</button>
-
-    </div>
-  ) : (
-    <div className="recipe">
-      <h2>This item does not exist</h2>
+          ) : (<h2>This item does not exist</h2>)}<br />
+          <button onClick={handleClick}>Go Back</button>
+        </div>
+      </div>
     </div>
   )
+
 }
 
 export default RecipeShow

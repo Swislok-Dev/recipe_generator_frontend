@@ -49,6 +49,14 @@
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
 
+.recipe {
+  color: black;
+}
+
+li {
+  list-style-type: none;
+}
+
 
 body {
   font-family: Poppins-Regular, sans-serif;
