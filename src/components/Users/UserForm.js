@@ -14,14 +14,13 @@ class UserForm extends React.Component {
     e.target.value !== "" ? e.target.classList.add("has-val") : e.target.classList.remove("has-val")
   }
 
-  handleOnSubmit = (e) => {
+  onHandleSubmit = (e) => {
     e.preventDefault();
     console.log(this.state)
     this.setState({
       username: '',
       password: '',
     })
-    e.target.reset()
   }
 
   render() {
@@ -29,26 +28,21 @@ class UserForm extends React.Component {
       <div className="background">
         <div className="container">
           <div className="wrap-container">
-            {/* <h3>Please Login</h3> */}
-            <form className="form validate-form" onSubmit={(event) =>this.handleOnSubmit(event)}>
+            <form className="form validate-form" onSubmit={this.onHandleSubmit}>
               <span className="form-title" value="Please log in">Please login</span>
               <div className="wrap-input">
-                {/* <label htmlFor="username" value="username">Username: </label> */}
                 <input className="input" type="text" name="username" onChange={(event) => this.handleOnChange(event)} />
                 <span className="focus-input " data-placeholder="USERNAME"></span>
               </div>
 
               <div className="wrap-input">
-                {/* <label htmlFor="password" value="password">Password: </label> */}
                 <input className="input" type="password" name="password" onChange={(event) => this.handleOnChange(event)} />
                 <span className="focus-input " data-placeholder="PASSWORD"></span>
               </div>
 
               <div className="container-form-btn">
                 <div className="wrap-form-btn">
-                  <div >
-                    <input className="form-btn" type="submit" value="Login"/>
-                  </div>
+                  <input className="form-btn" type="submit" value="Login"/>
                 </div>
               </div>
             </form>
