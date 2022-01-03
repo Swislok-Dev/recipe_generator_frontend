@@ -166,6 +166,16 @@ iframe {
   padding: 72px 55px 90px 55px;
 }
 
+.review-container {
+  width: 80%;
+  background: #fff;
+  border-radius: 10px;
+  margin: 25px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  overflow: hidden;
+}
+
 .form {
   width: 100%;
 }

@@ -33,6 +33,19 @@ export const addRecipe =(recipe) => {
   }
 }
 
+export const addReview = (review, recipeId) => {
+  return dispatch => fetch(`${API}/recipes/${recipeId}/reviews`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(review)
+  })
+  .then(resp => {
+    resp.json().then(review => dispatch({ type: 'ADD_REVIEW', payload: review }))
+  })
+}
+
 export const signup = (user) => {
   return dispatch => fetch(`${API}/users`, {
     method: 'POST',

@@ -10,8 +10,11 @@ import RecipeList from '../components/Recipes/RecipeList'
 class RecipesContainer extends React.Component {
 
   componentDidMount() {
+    console.log("RecipesContainer fetchRecipes()")
     this.props.fetchRecipes()
   }
+
+  
   
   render(){
     return (
