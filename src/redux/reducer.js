@@ -45,7 +45,7 @@ export function reducer(state = {recipes: []}, action) {
       //   )}
       // }
 
-      const selectedRecipe = state.recipes.filter(recipe => recipe.id === action.payload.recipeId)
+      const selectedRecipe = state.recipes.filter(recipe => recipe.id === action.recipeId)
       return { 
         ...state,
         selectedRecipe: { ...selectedRecipe, reviews: [action.payload]}

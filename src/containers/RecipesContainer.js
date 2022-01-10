@@ -21,7 +21,7 @@ class RecipesContainer extends React.Component {
       <div className="centered">
         <Switch>
           <Route path="/recipes/new" component={ CreateRecipe } />
-          <Route path="/recipes/:id" render={(routerProps) => <RecipeShow {...routerProps} recipes={this.props.recipes}  /> }/>
+          <Route path="/recipes/:id" render={(routerProps) => <RecipeShow {...routerProps} onEnter={this.props.fetchRecipes} recipes={this.props.recipes}  /> }/>
           <Route path="/recipes" render={(routerProps) => <RecipeList { ...routerProps } recipes={this.props.recipes} /> }/>
         </Switch>
       </div>

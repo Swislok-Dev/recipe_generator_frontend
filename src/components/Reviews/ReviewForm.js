@@ -14,9 +14,13 @@ import { addReview, fetchRecipes } from '../../redux/actions'
       }
     }
 
+    // componentDidMount() {
+    //   this.props.fetchRecipes()
+    // }
+
     componentDidUpdate(prevProps, prevState) {
-      if (this.props === prevProps ) {
-        return this.props.fetchRecipes()
+      if (this.props === prevProps && this.state !== prevState) {
+        this.props.fetchRecipes()
       }
     }
 
