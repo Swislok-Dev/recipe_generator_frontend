@@ -14,14 +14,18 @@ import { addReview, fetchRecipes } from '../../redux/actions'
       }
     }
 
-    // componentDidMount() {
-    //   this.props.fetchRecipes()
-    // }
+    componentDidMount() {
+      this.props.fetchRecipes()
+    }
 
     componentDidUpdate(prevProps, prevState) {
       if (this.props === prevProps && this.state !== prevState) {
         this.props.fetchRecipes()
       }
+    }
+
+    componentWillUnmount() {
+      this.props.fetchRecipes()
     }
 
   onHandleChange = e => {
@@ -37,7 +41,6 @@ import { addReview, fetchRecipes } from '../../redux/actions'
       rating: 5,
       content: '',
     })
-
   }
   // const [rating, setRating] = useState(5)
   // const [content, setContent] = useState('')
