@@ -28,6 +28,7 @@ class CreateRecipe extends React.Component {
       ingredients: "",
       instructions: "",
     })
+    this.props.history.push("/recipes")
   }  
   
   render() {
