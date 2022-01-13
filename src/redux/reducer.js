@@ -20,7 +20,7 @@ const initialUser = {
 
 // const initialState = {
 //   recipes: [],
-//   currentRecipe: initialRecipe,
+//   selectedRecipe: initialRecipe,
 //   user: initialUser,
 // }
 
@@ -31,24 +31,19 @@ export function reducer(state = {recipes: []}, action) {
     case 'ADD_RECIPE':
       return { ...state, recipes: [...state.recipes, action.payload] }
     case 'GET_RECIPE':
-      return { ...state, currentRecipe: action.payload }
+      return { ...state, selectedRecipe: action.payload }
     case 'CLEAR_RECIPE':
-      return { ...state, currentRecipe: initialRecipe }
+      return { ...state, selectedRecipe: initialRecipe }
     case 'GET_USER':
       return { ...state, user: action.payload }
     case 'ADD_REVIEW':
-      // return {
-      //   ...state,
-      //   reviews: {
-      //     ...state.recipes.map(
-      //     (recipe, i) => i === action.payload.recipe_Id ? { ...recipe, reviews: [action.payload]} : recipe 
-      //   )}
-      // }
-
       const selectedRecipe = state.recipes.filter(recipe => recipe.id === action.recipeId)
       return { 
         ...state,
-        selectedRecipe: { ...selectedRecipe, reviews: [action.payload]}
+        selectedRecipe: { 
+          ...selectedRecipe,
+          reviews: [action.payload]
+        }
       }
 
 
