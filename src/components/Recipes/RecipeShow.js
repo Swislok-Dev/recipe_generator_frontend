@@ -6,20 +6,14 @@ import { getRecipe } from '../../redux/actions'
 import { connect } from 'react-redux'
 import ReviewsContainer from '../../containers/ReviewsContainer'
 
-
-
 const RecipeShow = ( props ) => {
-  const {match, recipes } = props
-
-  
-  
+  const { match, recipes } = props
 
   const history = useHistory();
 
   const handleClick = () => {
     history.push("/recipes")
   }
-
 
   const recipe = recipes.filter(recipe => recipe.id === Number(match.params.id))[0]
   // const recipe =  getRecipe(match.params.id)
@@ -57,19 +51,12 @@ const RecipeShow = ( props ) => {
         </div>
       </div>
       <ReviewsContainer recipe={recipe}/>
-      {/* <ReviewForm recipe={recipe}/>
-      <Reviews recipe={recipe} /> */}
-              
-            {/* {reviews()}         */}
     </>
   )
-
 }
 
 const mapStateToProps = state => {
   return { ...state.currentRecipe }
 }
-
-
 
 export default connect(mapStateToProps, {getRecipe})(RecipeShow)

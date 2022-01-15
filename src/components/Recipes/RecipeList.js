@@ -6,9 +6,9 @@ const RecipeList = props => {
   const { recipes } = props
 
   const renderRecipes = (
-    recipes.map(recipeID =>
-      <Link key={recipeID.id} className="card" recipe={recipeID} to={`/recipes/${recipeID.id}`}>
-        <p>{recipeID.title}</p>
+    recipes.map(recipe =>
+      <Link key={recipe.id} className="card"  to={`/recipes/${recipe.id}`}>
+        <p>{recipe.title}</p>
       </Link> 
     )
   )
