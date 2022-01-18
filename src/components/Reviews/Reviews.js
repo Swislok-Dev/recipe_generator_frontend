@@ -1,8 +1,12 @@
 import { connect } from 'react-redux'
+import { useEffect } from 'react'
+import { fetchRecipes } from '../../redux/actions'
 import Review from '../Reviews/Review'
 
 const Reviews = (props) => {
   const reviews = props.reviews
+
+  useEffect(fetchRecipes, [fetchRecipes])
 
   return (
   <div className='reviews'>
