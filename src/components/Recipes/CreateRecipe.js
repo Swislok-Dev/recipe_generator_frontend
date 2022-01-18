@@ -35,20 +35,17 @@ const CreateRecipe = () => {
 
               <div className="wrap-input validate-input " data-validate="Title is required">
                 <input className="input"  type="text" required name="title"  value={title} onChange={handleChange} />
-                {/* <input className='input' type='text' required name='title' value={title} onChange={onChange} /> */}
                 <span className="focus-input" data-placeholder="RECIPE TITLE"></span>
               </div>
 
               <div className="wrap-input validate-input " data-validate="Ingredients are required">
                 <input className="input" type="text" required name="ingredients" value={ingredients} onChange={handleChange} />
-                {/* <input className='input' type='text' required name='ingredients' value={ingredients} onChange={onChange} /> */}
 
                 <span className="focus-input " data-placeholder="INGREDIENTS"></span>
               </div>
 
               <div className="wrap-input validate-input " data-validate="Instructions are required">
                 <textarea className="input" type="text" required name="instructions" value={instructions} onChange={handleChange} />
-                {/* <textarea className='input' type='text' required name='instructions' value={instructions} onChange={onChange} /> */}
 
                 <span className="focus-input " data-placeholder="INSTRUCTIONS"></span>
               </div>

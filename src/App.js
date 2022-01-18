@@ -9,7 +9,6 @@ import { Route, Switch } from 'react-router-dom'
 import UsersContainer from './containers/UsersContainer'
 import RecipesContainer from './containers/RecipesContainer'
 
-// import RecipeShow from './components/Recipes/RecipeShow'
 
 
 class App extends Component {
@@ -23,7 +22,6 @@ class App extends Component {
           <h1>Recipe Generator</h1>
           <NavBar />
         <Switch>
-          {/* <Route path='/recipes/:id'><RecipeShow /></Route> */}
           <Route path="/recipes" render={() => <RecipesContainer /> } />
           <Route path="/login" render={() =><UsersContainer /> } />
           <Route exact path="/" component={ Home } />

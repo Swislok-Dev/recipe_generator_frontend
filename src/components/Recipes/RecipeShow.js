@@ -1,7 +1,5 @@
 import React from 'react'
 import { useHistory } from 'react-router-dom'
-// import ReviewForm from '../Reviews/ReviewForm'
-// import Reviews from '../Reviews/Reviews'
 import { getRecipe } from '../../redux/actions' 
 import { connect } from 'react-redux'
 import ReviewsContainer from '../../containers/ReviewsContainer'
@@ -16,7 +14,6 @@ const RecipeShow = ( props ) => {
   }
 
   const recipe = recipes.filter(recipe => recipe.id === Number(match.params.id))[0]
-  // const recipe =  getRecipe(match.params.id)
 
   const ingredientList = () => {
     return (recipe["ingredients"].split(", ").map(item =>

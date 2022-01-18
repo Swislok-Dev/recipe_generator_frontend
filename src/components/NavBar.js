@@ -15,7 +15,7 @@ const activeLink = {
   border: "2px solid white",
 }
 
-const NavBar = (props) =>{
+const NavBar = () =>{
   return (
     <nav className="navbar">
       <NavLink to='/' exact style={link} activeStyle={activeLink} >Home</NavLink>
