@@ -4,7 +4,7 @@ import { connect, useDispatch } from 'react-redux'
 import { addRecipe } from '../../redux/actions'
 
 
-const CreateRecipe = () => {
+const RecipeForm = () => {
 
   const dispatch = useDispatch();
   const history = useHistory()
@@ -68,4 +68,4 @@ const mapStateToProps = state => ({
 })
 
 
-export default connect(mapStateToProps, { addRecipe })(CreateRecipe)
+export default connect(mapStateToProps, { addRecipe })(RecipeForm)
