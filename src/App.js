@@ -6,7 +6,6 @@ import Home from './components/Home'
 import { connect } from 'react-redux'
 import { fetchRecipes } from './redux/actions'
 import { Route, Switch } from 'react-router-dom'
-import UsersContainer from './containers/UsersContainer'
 import RecipesContainer from './containers/RecipesContainer'
 
 
@@ -23,7 +22,6 @@ class App extends Component {
           <NavBar />
         <Switch>
           <Route path="/recipes" render={() => <RecipesContainer /> } />
-          <Route path="/login" render={() =><UsersContainer /> } />
           <Route exact path="/" component={ Home } />
         </Switch>
       </div>
