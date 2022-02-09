@@ -8,7 +8,7 @@
   text-align: -webkit-center;
   padding: 10px;
   font-family: Poppins-Regular;
-  color: #b4aeec;
+  /* color: #b4aeec; */
   
 }
 
@@ -31,7 +31,7 @@
   box-sizing: border-box;
   margin: 1rem 1.25em;
   border: 2px solid #fff;
-  box-shadow: 0 4px 8px 0 #fff;
+  box-shadow: 0 4px 8px 0 black;
   background-color: #db8d8d;
   border-radius: 25%;
   max-width: 500px;
@@ -61,7 +61,7 @@ li {
 body {
   font-family: Poppins-Regular, sans-serif;
   height: 100%;
-  background-color: rgb(182, 55, 55);
+  background-color: lightgrey;
 }
 
 
@@ -164,6 +164,8 @@ iframe {
   border-radius: 10px;
   overflow: hidden;
   padding: 72px 55px 90px 55px;
+  border: black 2px solid;
+
 }
 
 .review-container {
@@ -174,6 +176,7 @@ iframe {
   padding-top: 10px;
   padding-bottom: 10px;
   overflow: hidden;
+  border: black 2px solid;
 }
 
 .form {
