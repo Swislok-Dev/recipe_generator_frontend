@@ -1,6 +1,8 @@
+# Introduction
+
 The backend for the app [here](https://github.com/Swislok-Dev/recipe_generator_backend)
 
-# Introduction
+## Recipe Generator frontend
 
 ReactJS frontend to displaying a list of recipes, a form for creating new recipes, and allows visitors of the site to add reviews with a rating to each recipe. All data is stored on a Rails server which is fetched to keep database up to date.
 
