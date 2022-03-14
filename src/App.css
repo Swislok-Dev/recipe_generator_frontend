@@ -33,7 +33,7 @@
   border: 2px solid #fff;
   box-shadow: 0 4px 8px 0 black;
   background-color: #db8d8d;
-  border-radius: 25%;
+  /* border-radius: 25%; */
   max-width: 500px;
   min-width: 300px;
 }
@@ -69,7 +69,12 @@ a.card {
   text-decoration: none;
 }
 
-nav.navbar a {
+#navbar {
+  margin: 3px;
+  padding: 3px;
+}
+
+nav#navbar a {
   font-size: 18px;
 }
 
