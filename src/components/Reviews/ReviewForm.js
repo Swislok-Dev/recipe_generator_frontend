@@ -11,6 +11,12 @@ const ReviewForm = ({ recipe, fetchRecipes, addReview }) => {
   const onHandleSubmit = e => {
     e.preventDefault()
     const newReview = { rating, content }
+    // Check for blank spaces
+    if (content.trim().length === 0) {
+      setContent('')
+      alert('You must place content')
+      return
+    }
     addReview(newReview, recipe.id)
     setRating(5)
     setContent('')
