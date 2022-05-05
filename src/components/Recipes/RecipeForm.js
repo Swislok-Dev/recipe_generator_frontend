@@ -17,7 +17,7 @@ const RecipeForm = () => {
 
   }
 
-  const { title, ingredients, instructions } = inputs
+  const { name, ingredients, instructions } = inputs
 
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -34,8 +34,8 @@ const RecipeForm = () => {
               <span className="form-title">Create Recipe Page</span>
 
               <div className="wrap-input validate-input " data-validate="Title is required">
-                <input className="input"  type="text" required name="title"  value={title} onChange={handleChange} />
-                <span className="focus-input" data-placeholder="RECIPE TITLE"></span>
+                <input className="input"  type="text" required name="name"  value={name} onChange={handleChange} />
+                <span className="focus-input" data-placeholder="RECIPE NAME"></span>
               </div>
 
               <div className="wrap-input validate-input " data-validate="Ingredients are required">

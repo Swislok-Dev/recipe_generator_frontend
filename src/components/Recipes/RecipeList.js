@@ -12,7 +12,7 @@ const RecipeList = props => {
     const search = event.target.value.toLowerCase()
     console.log("Search:", search)
     const filterRecipes = recipes.filter(recipe => {
-      const foundRecipes = recipe.title.toLowerCase().includes(search)
+      const foundRecipes = recipe.name.toLowerCase().includes(search)
       return foundRecipes
     })
     setFilterRecipes(filterRecipes)
@@ -24,7 +24,7 @@ const RecipeList = props => {
     const showRecipes = (filterRecipes.length === 0) ? recipes : filterRecipes
     return  showRecipes.map(recipe =>
       <Link key={recipe.id} className="card"  to={`/recipes/${recipe.id}`}>
-        <p>{recipe.title}</p>
+        <p>{recipe.name}</p>
       </Link> 
     )
   }

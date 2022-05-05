@@ -34,7 +34,7 @@ const RecipeShow = ( props ) => {
             { recipe ? (
               <>
                 <h2>Recipe Name</h2>
-                <p>{`${recipe.title}`}</p>
+                <p>{`${recipe.name}`}</p>
                 
                 <h3>Ingredients</h3>
                 {ingredientList()}
